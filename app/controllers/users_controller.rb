@@ -21,6 +21,6 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all.includes(:attendances)
+    @users = User.includes(:attendances => {:show => :venues})
   end
 end
